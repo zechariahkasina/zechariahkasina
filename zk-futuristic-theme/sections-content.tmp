@@ -1,0 +1,309 @@
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Zechariah Kasina</h1>
+            <p class="hero-subtitle"><span class="typing-text" id="typing-text"></span></p>
+            <p class="hero-description">
+                Architecting the future of cloud infrastructure at AWS.
+                Building scalable, serverless, and AI-powered solutions that transform
+                complex cloud technologies into accessible developer experiences.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <p class="section-subtitle fade-in">Building Bridges Between Cloud & Innovation</p>
+
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>
+                        Hello! I'm <span class="highlight">Zechariah Kasina</span>, a Senior DevOps Engineer at
+                        <span class="highlight">Amazon Web Services</span> based in Lake Oswego, Oregon.
+                        I specialize in creating scalable cloud infrastructure, serverless applications,
+                        and AI-powered solutions that solve real-world challenges.
+                    </p>
+                    <p>
+                        My mission is to bridge the gap between cutting-edge AWS services and practical
+                        implementations that developers can learn from. Whether it's Infrastructure as Code
+                        templates, AI document processors, or automation scripts, I'm passionate about
+                        making complex cloud technologies accessible.
+                    </p>
+                    <p>
+                        I spend my days working with <span class="highlight">ECS Fargate, Lambda, and Amazon Bedrock</span>,
+                        while contributing educational content to the AWS Community. I'm particularly excited
+                        about emerging technologies like Model Context Protocol servers and building practical
+                        tools for document processing and content management.
+                    </p>
+                </div>
+
+                <div class="stats-grid fade-in">
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100K+</div>
+                        <div class="stat-label">Lines of Code</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">AWS</div>
+                        <div class="stat-label">Certified Expert</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title fade-in">Technical Arsenal</h2>
+            <p class="section-subtitle fade-in">Technologies I Work With Daily</p>
+
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <div class="skill-icon">☁️</div>
+                    <h3>Cloud & Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Terraform</span>
+                        <span class="skill-tag">ECS Fargate</span>
+                        <span class="skill-tag">Lambda</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <div class="skill-icon">💻</div>
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">PowerShell</span>
+                        <span class="skill-tag">Bash</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <div class="skill-icon">🤖</div>
+                    <h3>AI & Machine Learning</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Amazon Bedrock</span>
+                        <span class="skill-tag">Claude AI</span>
+                        <span class="skill-tag">Model Context Protocol</span>
+                        <span class="skill-tag">AI Integration</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <div class="skill-icon">🛠️</div>
+                    <h3>DevOps & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">CDK</span>
+                        <span class="skill-tag">CloudFormation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            <p class="section-subtitle fade-in">Innovations That Make a Difference</p>
+
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-content">
+                        <div class="project-icon">📄</div>
+                        <h3>AI Document Summarizer</h3>
+                        <p>
+                            Serverless application using Python, AWS Lambda, and Amazon Bedrock with
+                            Claude 3.7 Sonnet for automatic document processing. Transforms lengthy
+                            documents into concise, actionable summaries.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">AWS Lambda</span>
+                            <span class="tech-badge">Amazon Bedrock</span>
+                            <span class="tech-badge">Claude 3.7</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/zechariahkasina/doc-summary-app-claude-aws" class="project-link" target="_blank">View Project</a>
+                            <a href="https://community.aws/content/2y9CAj9ougjsjcMVHY4TNLjRYOm/ai-powered-document-summarizer-with-claude-3-7-on-aws" class="project-link" target="_blank">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-content">
+                        <div class="project-icon">🐳</div>
+                        <h3>ECS Fargate EFS Integration</h3>
+                        <p>
+                            TypeScript-based AWS CDK infrastructure template for container orchestration
+                            with persistent storage. Enables seamless scaling while maintaining data
+                            persistence across container instances.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge">AWS CDK</span>
+                            <span class="tech-badge">ECS Fargate</span>
+                            <span class="tech-badge">EFS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/zechariahkasina/ecs-fargate-efs" class="project-link" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-content">
+                        <div class="project-icon">📖</div>
+                        <h3>Bible XML to Doc Converter</h3>
+                        <p>
+                            PowerShell automation tool for converting religious content between formats.
+                            Processes XML data structures and generates formatted Word documents with
+                            proper styling and organization.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">PowerShell</span>
+                            <span class="tech-badge">XML</span>
+                            <span class="tech-badge">Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/zechariahkasina/Bible-Xml-to-Doc" class="project-link" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-content">
+                        <div class="project-icon">🔌</div>
+                        <h3>MCP Server Examples</h3>
+                        <p>
+                            Python implementations demonstrating Model Context Protocol integration
+                            with Amazon Bedrock. Provides practical examples for developers getting
+                            started with MCP servers.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">MCP</span>
+                            <span class="tech-badge">Amazon Bedrock</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://community.aws/content/2ygVh3GU4r5UwNlKa9QWwSAsCu9/getting-started-with-mcp-servers-the-beginner-s-guide" class="project-link" target="_blank">Read Guide</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title fade-in">Professional Journey</h2>
+            <p class="section-subtitle fade-in">Where Innovation Meets Experience</p>
+
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>Senior DevOps Engineer</h3>
+                        <div class="timeline-company">Amazon Web Services (AWS)</div>
+                        <div class="timeline-period">Present</div>
+                        <ul>
+                            <li>Architecting scalable cloud infrastructure using ECS Fargate, Lambda, and serverless technologies</li>
+                            <li>Developing AI-powered solutions with Amazon Bedrock and Claude AI</li>
+                            <li>Contributing educational content to AWS Community with 10K+ views</li>
+                            <li>Creating open-source Infrastructure as Code templates and automation tools</li>
+                            <li>Leading initiatives in Model Context Protocol server implementations</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>DevOps Engineer</h3>
+                        <div class="timeline-company">Infosys</div>
+                        <div class="timeline-period">Previous Role</div>
+                        <ul>
+                            <li>Managed cloud infrastructure and deployment pipelines</li>
+                            <li>Implemented CI/CD best practices and automation workflows</li>
+                            <li>Collaborated on enterprise-scale cloud migration projects</li>
+                            <li>Mentored junior engineers on DevOps practices</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>B.Tech in Information Technology</h3>
+                        <div class="timeline-company">SRKR Engineering College</div>
+                        <div class="timeline-period">2005 - 2009</div>
+                        <ul>
+                            <li>Foundation in computer science and software engineering</li>
+                            <li>Specialized in cloud computing and distributed systems</li>
+                            <li>Developed strong programming and problem-solving skills</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Let's Build Together</h2>
+            <p class="section-subtitle fade-in">Always Open to New Opportunities</p>
+
+            <div class="contact-content fade-in">
+                <p class="contact-text">
+                    I'm always excited to collaborate on cloud infrastructure projects, discuss AI/ML
+                    implementations, or help fellow developers navigate AWS services. Whether you have
+                    a question about one of my projects or want to explore new ideas, feel free to reach out!
+                </p>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/zechariahkasina/" class="social-link" target="_blank" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="https://github.com/zechariahkasina" class="social-link" target="_blank" title="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://x.com/zechariahkasina" class="social-link" target="_blank" title="Twitter/X">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://community.aws/@zechariah" class="social-link" target="_blank" title="AWS Community">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335c-.072.048-.144.071-.208.071-.08 0-.16-.039-.239-.12-.112-.127-.207-.263-.279-.415-.072-.16-.144-.34-.208-.551-.527.615-1.119.923-1.790.923-.511 0-.918-.144-1.223-.44-.304-.296-.455-.695-.455-1.214 0-.536.192-.968.583-1.303.392-.336.911-.504 1.575-.504.216 0 .439.016.671.048.232.031.471.08.727.143v-.479c0-.496-.104-.839-.304-1.046-.208-.2-.56-.304-1.046-.304-.224 0-.455.027-.695.088-.239.057-.471.136-.695.24-.104.048-.183.08-.232.096-.048.016-.08.024-.104.024-.096 0-.144-.072-.144-.215v-.335c0-.112.016-.2.056-.256s.12-.104.239-.16c.224-.111.495-.207.807-.279.32-.08.655-.12 1.015-.12.775 0 1.343.176 1.711.528.36.352.543.88.543 1.598v2.095zm-2.455.927c.216 0 .439-.04.679-.119.24-.08.455-.24.647-.471.12-.144.207-.304.256-.495.048-.191.08-.423.08-.695v-.335c-.176-.048-.375-.088-.583-.112-.216-.024-.423-.04-.64-.04-.455 0-.791.088-1.015.264s-.336.423-.336.767c0 .328.08.576.247.751.159.191.423.279.743.279zm4.87.615c-.128 0-.215-.024-.271-.08-.057-.048-.104-.151-.144-.279l-1.599-5.271c-.04-.135-.064-.223-.064-.271 0-.104.056-.168.16-.168h.647c.135 0 .231.024.279.08.056.048.096.152.128.279l1.143 4.503 1.062-4.503c.024-.127.064-.231.12-.279.056-.048.151-.08.279-.08h.527c.135 0 .231.024.287.08.056.048.104.152.12.279l1.078 4.558 1.175-4.558c.032-.127.08-.231.128-.279.056-.048.151-.08.279-.08h.615c.104 0 .168.056.168.168 0 .032-.008.064-.016.104-.008.04-.024.111-.056.216l-1.638 5.271c-.04.135-.088.231-.144.279-.056.048-.151.08-.279.08h-.568c-.135 0-.231-.024-.287-.08-.056-.056-.104-.16-.12-.287l-1.055-4.391-1.046 4.383c-.024.135-.064.231-.12.287-.056.056-.159.08-.287.08h-.567zm8.431.183c-.336 0-.671-.04-.999-.12-.328-.08-.583-.191-.775-.32-.112-.071-.191-.151-.231-.223-.04-.072-.064-.151-.064-.223v-.352c0-.144.056-.215.16-.215.064 0 .128.016.2.048s.151.08.247.127c.32.16.663.24 1.015.24.287 0 .511-.048.671-.151.16-.096.24-.24.24-.423 0-.127-.048-.232-.144-.319-.096-.088-.304-.176-.615-.264l-.887-.279c-.447-.144-.775-.352-.975-.631-.2-.272-.304-.583-.304-.927 0-.264.056-.504.176-.711.12-.215.279-.391.479-.543.2-.151.431-.263.695-.336.264-.08.543-.112.831-.112.144 0 .295.008.447.032.151.024.295.056.431.096.128.04.247.088.36.136.111.048.2.104.263.16.064.048.111.104.143.168.032.063.048.136.048.223v.327c0 .144-.056.223-.16.223-.064 0-.176-.048-.336-.127-.495-.224-.999-.336-1.511-.336-.255 0-.471.04-.615.127-.144.088-.215.223-.215.423 0 .128.056.24.168.327.104.088.328.184.647.272l.871.279c.439.144.759.344.951.607.2.264.295.575.295.935 0 .271-.056.527-.167.751-.112.232-.271.432-.487.607-.215.176-.479.311-.791.4-.319.096-.671.151-1.062.151z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>

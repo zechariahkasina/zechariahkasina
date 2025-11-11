@@ -319,3 +319,260 @@ function zk_futuristic_image_sizes() {
     add_image_size('zk-thumbnail', 400, 300, true);
 }
 add_action('after_setup_theme', 'zk_futuristic_image_sizes');
+
+/**
+ * SEO: Add Open Graph and Twitter Card meta tags
+ */
+function zk_futuristic_add_meta_tags() {
+    if (is_singular()) {
+        global $post;
+
+        // Get post/page data
+        $title = get_the_title();
+        $description = get_the_excerpt() ? get_the_excerpt() : get_bloginfo('description');
+        $url = get_permalink();
+        $image = has_post_thumbnail() ? get_the_post_thumbnail_url($post->ID, 'full') : get_template_directory_uri() . '/screenshot.png';
+        $site_name = get_bloginfo('name');
+
+        // Open Graph meta tags
+        echo '<meta property="og:type" content="' . (is_front_page() ? 'website' : 'article') . '" />' . "\n";
+        echo '<meta property="og:title" content="' . esc_attr($title) . '" />' . "\n";
+        echo '<meta property="og:description" content="' . esc_attr(wp_trim_words($description, 30)) . '" />' . "\n";
+        echo '<meta property="og:url" content="' . esc_url($url) . '" />' . "\n";
+        echo '<meta property="og:site_name" content="' . esc_attr($site_name) . '" />' . "\n";
+        echo '<meta property="og:image" content="' . esc_url($image) . '" />' . "\n";
+
+        // Twitter Card meta tags
+        echo '<meta name="twitter:card" content="summary_large_image" />' . "\n";
+        echo '<meta name="twitter:title" content="' . esc_attr($title) . '" />' . "\n";
+        echo '<meta name="twitter:description" content="' . esc_attr(wp_trim_words($description, 30)) . '" />' . "\n";
+        echo '<meta name="twitter:image" content="' . esc_url($image) . '" />' . "\n";
+
+        // Article specific tags
+        if (is_single()) {
+            echo '<meta property="article:published_time" content="' . esc_attr(get_the_date('c')) . '" />' . "\n";
+            echo '<meta property="article:modified_time" content="' . esc_attr(get_the_modified_date('c')) . '" />' . "\n";
+            echo '<meta property="article:author" content="' . esc_attr(get_the_author()) . '" />' . "\n";
+        }
+    } else {
+        // Homepage or archive
+        $title = get_bloginfo('name');
+        $description = get_bloginfo('description');
+        $url = home_url('/');
+        $image = get_template_directory_uri() . '/screenshot.png';
+
+        echo '<meta property="og:type" content="website" />' . "\n";
+        echo '<meta property="og:title" content="' . esc_attr($title) . '" />' . "\n";
+        echo '<meta property="og:description" content="' . esc_attr($description) . '" />' . "\n";
+        echo '<meta property="og:url" content="' . esc_url($url) . '" />' . "\n";
+        echo '<meta property="og:image" content="' . esc_url($image) . '" />' . "\n";
+
+        echo '<meta name="twitter:card" content="summary_large_image" />' . "\n";
+        echo '<meta name="twitter:title" content="' . esc_attr($title) . '" />' . "\n";
+        echo '<meta name="twitter:description" content="' . esc_attr($description) . '" />' . "\n";
+        echo '<meta name="twitter:image" content="' . esc_url($image) . '" />' . "\n";
+    }
+
+    // Additional SEO meta tags
+    echo '<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />' . "\n";
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1.0" />' . "\n";
+    echo '<link rel="canonical" href="' . esc_url(get_permalink()) . '" />' . "\n";
+}
+add_action('wp_head', 'zk_futuristic_add_meta_tags', 1);
+
+/**
+ * SEO: Add JSON-LD Schema.org structured data
+ */
+function zk_futuristic_add_schema_markup() {
+    if (is_front_page() || is_home()) {
+        $schema = array(
+            '@context' => 'https://schema.org',
+            '@type' => 'Person',
+            'name' => 'Zechariah Kasina',
+            'jobTitle' => 'Senior DevOps Engineer',
+            'worksFor' => array(
+                '@type' => 'Organization',
+                'name' => 'Amazon Web Services (AWS)'
+            ),
+            'url' => home_url('/'),
+            'sameAs' => array(
+                'https://www.linkedin.com/in/zechariahkasina/',
+                'https://github.com/zechariahkasina',
+                'https://x.com/zechariahkasina',
+                'https://community.aws/@zechariah'
+            ),
+            'alumniOf' => array(
+                '@type' => 'EducationalOrganization',
+                'name' => 'SRKR Engineering College'
+            ),
+            'knowsAbout' => array(
+                'AWS', 'DevOps', 'Cloud Computing', 'Serverless', 'AI/ML',
+                'Docker', 'Kubernetes', 'Python', 'TypeScript', 'Infrastructure as Code'
+            ),
+            'address' => array(
+                '@type' => 'PostalAddress',
+                'addressLocality' => 'Lake Oswego',
+                'addressRegion' => 'OR',
+                'addressCountry' => 'USA'
+            )
+        );
+
+        echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
+
+        // Website schema
+        $website_schema = array(
+            '@context' => 'https://schema.org',
+            '@type' => 'WebSite',
+            'name' => get_bloginfo('name'),
+            'description' => get_bloginfo('description'),
+            'url' => home_url('/'),
+            'potentialAction' => array(
+                '@type' => 'SearchAction',
+                'target' => home_url('/?s={search_term_string}'),
+                'query-input' => 'required name=search_term_string'
+            )
+        );
+
+        echo '<script type="application/ld+json">' . wp_json_encode($website_schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
+    }
+
+    if (is_single() && 'post' === get_post_type()) {
+        global $post;
+
+        $schema = array(
+            '@context' => 'https://schema.org',
+            '@type' => 'BlogPosting',
+            'headline' => get_the_title(),
+            'description' => get_the_excerpt(),
+            'author' => array(
+                '@type' => 'Person',
+                'name' => get_the_author()
+            ),
+            'datePublished' => get_the_date('c'),
+            'dateModified' => get_the_modified_date('c'),
+            'publisher' => array(
+                '@type' => 'Person',
+                'name' => get_bloginfo('name')
+            ),
+            'mainEntityOfPage' => array(
+                '@type' => 'WebPage',
+                '@id' => get_permalink()
+            )
+        );
+
+        if (has_post_thumbnail()) {
+            $schema['image'] = array(
+                '@type' => 'ImageObject',
+                'url' => get_the_post_thumbnail_url($post->ID, 'full')
+            );
+        }
+
+        echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
+    }
+}
+add_action('wp_head', 'zk_futuristic_add_schema_markup', 2);
+
+/**
+ * SEO: Generate XML Sitemap
+ */
+function zk_futuristic_generate_sitemap() {
+    if (isset($_GET['sitemap']) && $_GET['sitemap'] === 'xml') {
+        header('Content-Type: application/xml; charset=utf-8');
+
+        echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+
+        // Homepage
+        echo '<url>' . "\n";
+        echo '<loc>' . esc_url(home_url('/')) . '</loc>' . "\n";
+        echo '<lastmod>' . date('Y-m-d') . '</lastmod>' . "\n";
+        echo '<changefreq>weekly</changefreq>' . "\n";
+        echo '<priority>1.0</priority>' . "\n";
+        echo '</url>' . "\n";
+
+        // Pages
+        $pages = get_pages();
+        foreach ($pages as $page) {
+            echo '<url>' . "\n";
+            echo '<loc>' . esc_url(get_permalink($page->ID)) . '</loc>' . "\n";
+            echo '<lastmod>' . date('Y-m-d', strtotime($page->post_modified)) . '</lastmod>' . "\n";
+            echo '<changefreq>monthly</changefreq>' . "\n";
+            echo '<priority>0.8</priority>' . "\n";
+            echo '</url>' . "\n";
+        }
+
+        // Posts
+        $posts = get_posts(array('numberposts' => -1));
+        foreach ($posts as $post) {
+            echo '<url>' . "\n";
+            echo '<loc>' . esc_url(get_permalink($post->ID)) . '</loc>' . "\n";
+            echo '<lastmod>' . date('Y-m-d', strtotime($post->post_modified)) . '</lastmod>' . "\n";
+            echo '<changefreq>monthly</changefreq>' . "\n";
+            echo '<priority>0.6</priority>' . "\n";
+            echo '</url>' . "\n";
+        }
+
+        echo '</urlset>';
+        exit;
+    }
+}
+add_action('init', 'zk_futuristic_generate_sitemap');
+
+/**
+ * SEO: Add meta description from excerpt or custom field
+ */
+function zk_futuristic_meta_description() {
+    if (is_singular()) {
+        global $post;
+        $description = '';
+
+        // Try custom field first
+        if (get_post_meta($post->ID, '_meta_description', true)) {
+            $description = get_post_meta($post->ID, '_meta_description', true);
+        } elseif ($post->post_excerpt) {
+            $description = $post->post_excerpt;
+        } else {
+            $description = wp_trim_words($post->post_content, 30, '...');
+        }
+
+        echo '<meta name="description" content="' . esc_attr(strip_tags($description)) . '" />' . "\n";
+    } elseif (is_home() || is_front_page()) {
+        echo '<meta name="description" content="' . esc_attr(get_bloginfo('description')) . '" />' . "\n";
+    } elseif (is_category()) {
+        echo '<meta name="description" content="' . esc_attr(strip_tags(category_description())) . '" />' . "\n";
+    }
+}
+add_action('wp_head', 'zk_futuristic_meta_description', 0);
+
+/**
+ * Performance: Defer JavaScript loading
+ */
+function zk_futuristic_defer_scripts($tag, $handle) {
+    if (is_admin()) {
+        return $tag;
+    }
+
+    $defer_scripts = array('zk-futuristic-animations');
+
+    if (in_array($handle, $defer_scripts)) {
+        return str_replace(' src', ' defer src', $tag);
+    }
+
+    return $tag;
+}
+add_filter('script_loader_tag', 'zk_futuristic_defer_scripts', 10, 2);
+
+/**
+ * Accessibility: Add skip link target
+ */
+function zk_futuristic_skip_link_focus_fix() {
+    ?>
+    <script>
+    /(trident|msie)/i.test(navigator.userAgent) && document.getElementById && window.addEventListener && window.addEventListener("hashchange", function() {
+        var t, e = location.hash.substring(1);
+        /^[A-z0-9_-]+$/.test(e) && (t = document.getElementById(e)) && (/^(?:a|select|input|button|textarea)$/i.test(t.tagName) || (t.tabIndex = -1), t.focus())
+    }, !1);
+    </script>
+    <?php
+}
+add_action('wp_print_footer_scripts', 'zk_futuristic_skip_link_focus_fix');
